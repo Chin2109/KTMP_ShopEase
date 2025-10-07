@@ -1,0 +1,5 @@
+FROM postgres:17
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=123
+ENV POSTGRES_DB=neondb
+COPY backup.sql /docker-entrypoint-initdb.d/
