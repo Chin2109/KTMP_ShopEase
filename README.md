@@ -101,12 +101,13 @@ KTMP_ShopEase/
 
 ---
 
-### 🧩 **ERD Design**
+## 🧩 ERD Design
 
 ---
 
 ### 🧰 **Technology Stack**
 
+```markdown
 | Layer | Technology | Description |
 |-------|-------------|--------------|
 | **Frontend** | ReactJS, Redux Toolkit, TailwindCSS | SPA architecture with modern state management |
