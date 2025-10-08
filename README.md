@@ -1,55 +1,118 @@
-# 🛒 ShopEase Fullstack E-Commerce Project
+# 🛍️ ShopEase E-Commerce Platform
 
-![image](https://github.com/user-attachments/assets/d623b68b-023e-420f-90c4-143a9285780e)
+![React](https://img.shields.io/badge/Frontend-ReactJS-61DAFB?logo=react&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot-6DB33F?logo=springboot&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-316192?logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Container-Docker-0db7ed?logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)
 
+---
 
-Welcome to the Fullstack E-Commerce Shopping Project repository! This project is a work in progress and aims to build a comprehensive e-commerce application using React.js for the front-end and Spring Boot for the backend. Once completed, it will offer a complete online shopping experience with features like product browsing, cart management, and order processing.
+## 📚 Table of Contents
 
-## 🛠️ Technologies Being Used
+1. [Overview](#-overview)
+2. [Features (Modules)](#-features-modules)
+3. [Project Structure](#-project-structure)
+4. [ERD Design](#-erd-design)
+5. [Technology Stack](#-technology-stack)
+6. [Getting Started](#-getting-started)
+7. [CI/CD Workflow](#-cicd-workflow)
+8. [Future Enhancements](#-future-enhancements)
+9. [Contributors](#-contributors)
+10. [Screenshots](#-screenshots)
 
-- **Frontend**: React.js, Redux, Tailwind CSS, Axios
-- **Backend**: Spring Boot, Spring Security, Spring Data JPA
-- **Database**: PostgreSQL
-- **Authentication**: JWT (JSON Web Tokens)
-- **Payment Gateway**: (Optional integration with Stripe/PayPal)
-- **Build Tools**: Maven, Webpack
+---
 
+## 🧭 Overview
 
-## Videos
-- 1.https://youtu.be/p8tBD3YTCPo
+**ShopEase** is a full-featured **E-Commerce Platform** built using **React**, **Spring Boot**, and **PostgreSQL**.  
+The system supports **user authentication**, **product management**, **order processing**, and **admin control panel**.  
+All components are fully **Dockerized** and integrated with **GitHub Actions** for automated CI/CD workflows.
 
-## ✅ To-Do List
+---
 
-### Frontend
-- [x] Set up React project structure
-- [x] Implement a Home Page with different sections and a Footer
-- [X] Create Mockup API Data (Content)
-- [X] Pages Navigation & Categories Page with Filters
-- [X] Product Detail Page
-- [X] Shopping cart functionality
-- [X] User authentication (sign-up, login, logout)
-- [X] Checkout process
+## 🚀 Features (Modules)
 
-### Backend
-- [X] Set up Spring Boot project
-- [X] Implement basic product API
-- [X] User authentication and authorization with JWT
-- [X] Order processing and management
-- [X] Integration with payment gateway
-- [X] Admin dashboard for product/order management
+### 👤 **Authentication & User Management**
+- User registration & login using JWT
+- OAuth2 (Google Sign-In)
+- Manage profile, addresses, and order history
 
-### Database
-- [X] Create PostgreSQL database schema
-- [X] Set up entity relationships (products, users, orders)
-- [X] Seed database with initial data
+### 🛒 **Product & Category**
+- Product CRUD operations
+- Category and category-type management
+- Product images with Bunny.net CDN integration
+- Filtering by price, size, color, and type
 
-### Other
-- [X] API documentation
-- [X] Unit and integration testing (Optional)
-- [X] Deployment scripts and CI/CD setup
+### 💳 **Cart & Checkout**
+- Add/remove products from cart
+- Real-time total calculation
+- Mock checkout and payment process
 
+### 📦 **Order Management**
+- Manage order status (Pending, Confirmed, Shipped, Delivered)
+- Order timeline tracking for users
 
+### 🧑‍💼 **Admin Panel**
+- Admin dashboard for managing products & categories
+- Order overview and control
+- Product statistics and management
 
+---
 
+## 🧱 Project Structure
 
-  
+```bash
+KTMP_ShopEase/
+├── UI/                           # Frontend (React)
+│   ├── src/
+│   │   ├── api/                  # API services (Axios)
+│   │   ├── assets/               # Fonts, images, styles
+│   │   ├── components/           # Reusable UI components
+│   │   ├── pages/                # Application pages (Home, Cart, Admin, etc.)
+│   │   ├── store/                # Redux store & slices
+│   │   ├── utils/                # Helper utilities (JWT, cart utils, etc.)
+│   │   └── index.js              # Entry point
+│   ├── dockerfile
+│   ├── nginx.conf
+│   └── package.json
+│
+├── backend/                      # Backend (Spring Boot)
+│   ├── controller/               # REST controllers (Product, Category, FileUpload)
+│   ├── dto/                      # Data Transfer Objects
+│   ├── entity/                   # JPA entities
+│   ├── repository/               # JPA repositories
+│   ├── service/                  # Business logic
+│   ├── mapper/                   # Entity ↔ DTO mappers
+│   ├── configuration/            # Swagger, security, app config
+│   └── ShopeaseApplication.java  # Main entry point
+│
+├── database/                     # PostgreSQL setup
+│   ├── dockerfile
+│   ├── backup.sql
+│   └── neondb.backup
+│
+├── docker-compose.yml            # Multi-container orchestration
+├── .github/
+│   └── workflows/
+│       └── cicd.yml              # CI/CD pipeline (build → push → deploy)
+├── shopEase.postman_collection.json
+└── README.md
+
+---
+
+### 🧩 **ERD Design**
+
+---
+
+### 🧰 **Technology Stack**
+
+| Layer | Technology | Description |
+|-------|-------------|--------------|
+| **Frontend** | ReactJS, Redux Toolkit, TailwindCSS | SPA architecture with modern state management |
+| **Backend** | Spring Boot 3, JPA, Swagger | REST API, business logic, API documentation |
+| **Database** | PostgreSQL 17 | Relational data storage |
+| **Storage/CDN** | Bunny.net | Static asset hosting |
+| **Containerization** | Docker, Docker Compose | Environment isolation and easy deployment |
+| **CI/CD** | GitHub Actions | Automated build, test, and deploy pipeline |
+| **Testing** | JUnit, Postman | Unit and integration testing |
